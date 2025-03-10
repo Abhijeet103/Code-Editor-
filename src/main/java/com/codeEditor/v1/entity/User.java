@@ -8,8 +8,9 @@ import lombok.Data;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id  ;
+    @Column(unique = true)
     private String username  ;
     @Column(unique = true)
     private String email ;

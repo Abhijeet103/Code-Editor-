@@ -7,8 +7,10 @@ import lombok.Data;
 @Data
 @Entity
 public class Files {
+
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private Long id;
 
     @Column(nullable = false)
@@ -26,6 +28,8 @@ public class Files {
 
     @PrePersist
     public void initializeBoilerplate() {
-        this.content = BoilerPlate.getBoilerplate(this.language);
+        if (this.content == null || this.content.isBlank()) {
+            this.content = BoilerPlate.getBoilerplate(this.language);
+        }
     }
 }
