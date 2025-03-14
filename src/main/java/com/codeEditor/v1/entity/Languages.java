@@ -3,7 +3,7 @@ package com.codeEditor.v1.entity;
 public enum Languages {
 
     JAVA("my-java-executor", "java"),
-    PYTHON("my-python-executor", "py"),
+    PYTHON("python-runner", "py"),
     CPP("my-cpp-executor", "cpp");
 
     private final String dockerImage;
